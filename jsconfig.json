@@ -1,7 +1,19 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@components/*": ["./src/components/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@constants/*": ["./src/constants/*"],
+      "@helpers/*": ["./src/helpers/*"]
     }
   }
 }
+// This configuration file sets up the base URL and path mappings for a JavaScript project.
+// It allows for easier imports by using the '@/' prefix to refer to the 'src' directory.
+// This is useful for avoiding relative paths like '../../src/module' and instead using '@/module'.
+// The "baseUrl" is set to the current directory, and the "paths" object maps '@/*' to './src/*'.
+// This setup is particularly useful in larger projects where managing relative paths can become cumbersome.
+// The "compilerOptions" object is used to specify options for the JavaScript compiler.
+// This file is typically used in projects that use tools like TypeScript or Babel for transpilation.
