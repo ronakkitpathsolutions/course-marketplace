@@ -1,9 +1,6 @@
-import { Button } from "@mui/material";
-
 export default function Home() {
   return <div>
-    <Button variant="contained" color="primary">
-      Click Me
-    </Button>
+    <h1>Welcome to Eduelle</h1>
+    <p>Your journey to learning starts here.</p>
   </div>;
 }

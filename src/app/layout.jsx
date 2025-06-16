@@ -21,7 +21,7 @@ export default function RootLayout({ children }) {
     <html lang="en">
       <body
         className={`${rubik.variable} antialiased`}
-        suppressHydrationWarning={true}
+        suppressHydrationWarning
       >
         <AppRouterCacheProvider>
           <ThemeProvider {...{ theme }}>{children}</ThemeProvider>
