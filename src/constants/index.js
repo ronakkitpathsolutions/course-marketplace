@@ -18,6 +18,8 @@ const USER_ROLE = {
   CUSTOMER: "customer",
 };
 
+const LANGUAGES = ["en", "es", "fr"];
+
 const AGE_RANGE = [
   { value: "19-25", label: "19-25" },
   { value: "26-30", label: "26-30" },
@@ -87,5 +89,6 @@ export {
   CANCEL_POPUPS_SUB_CATEGORIES,
   SIDE_NAV_WIDTH,
   TOP_NAV_HEIGHT,
-  LANDING_PAGE
+  LANDING_PAGE,
+  LANGUAGES,
 };

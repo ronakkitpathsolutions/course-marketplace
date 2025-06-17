@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Forgot Password",
+  title: "Forgot Password - Course Marketplace",
   description:
-    "Reset your Eduelle account password to regain access to your dashboard.",
+    "Reset your account password to regain access to your dashboard.",
   robots: "index, follow",
   keywords: ["Forgot Password", "Password Reset"],
 };

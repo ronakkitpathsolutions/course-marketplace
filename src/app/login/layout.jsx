@@ -1,7 +1,7 @@
 export const metadata = {
-  title: "Login",
+  title: "Login - Course Marketplace",
   description:
-    "Access your Eduelle account to manage your dashboard, settings, and learning tools.",
+    "Access your account to manage your dashboard, settings, and learning tools.",
   robots: "index, follow",
   keywords: [
     "Login",
@@ -10,5 +10,9 @@ export const metadata = {
 };
 
 export default function LoginLayout({ children }) {
-  return <div>{children}</div>;
+  return (
+    <div>
+      {children}
+    </div>
+  );
 }

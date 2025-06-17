@@ -1,3 +1,13 @@
+export {
+  detectLanguageFromCookies,
+  detectLanguageFromHeaders,
+  getBestLanguage,
+  getClientLanguage,
+  setLanguagePreference,
+  LANGUAGE_COOKIE_NAME,
+  DEFAULT_LANGUAGE
+} from './language';
+
 export const isEmptyObject = (obj = {}) => {
   return Object.keys(obj).length === 0 && obj.constructor === Object;
 };
