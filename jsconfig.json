@@ -6,7 +6,10 @@
       "@components/*": ["./src/components/*"],
       "@lib/*": ["./src/lib/*"],
       "@constants/*": ["./src/constants/*"],
-      "@helpers/*": ["./src/helpers/*"]
+      "@helpers/*": ["./src/helpers/*"],
+      "@store/*": ["./src/store/*"],
+      "@validations/*": ["./src/validations/*"],
+      "@api/*": ["./src/api/*"],
     }
   }
 }

@@ -3,6 +3,7 @@ import "./globals.css";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v15-appRouter";
 import { ThemeProvider } from "@mui/material";
 import theme from "@/theme";
+import ReduxProvider from "@/providers/redux-provider";
 
 const rubik = Rubik({
   variable: "--font-rubik",
@@ -17,14 +18,17 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+
   return (
-    <html lang="en">
+    <html lang={'en'}>
       <body
         className={`${rubik.variable} antialiased`}
         suppressHydrationWarning
       >
         <AppRouterCacheProvider>
-          <ThemeProvider {...{ theme }}>{children}</ThemeProvider>
+          <ThemeProvider {...{ theme }}>
+              <ReduxProvider>{children}</ReduxProvider>
+          </ThemeProvider>
         </AppRouterCacheProvider>
       </body>
     </html>
