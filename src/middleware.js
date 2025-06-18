@@ -6,8 +6,6 @@ const PRIVATE_BASE_ROUTES = ["/dashboard", "/admin"];
 
 export function middleware(request) {
   const { pathname } = request.nextUrl;
-  console.log("🧠 Middleware hit:", pathname);
-
   // 🧊 Skip Next.js internal routes & static assets
   if (
     pathname.startsWith("/_next") ||
@@ -24,7 +22,6 @@ export function middleware(request) {
   const isAuthenticated = isTokenValid(token);
   // 🌍 Language detection from cookies/headers
   const detectedLanguage = getBestLanguage(request);
-  console.log("🌍 Middleware detected language:", detectedLanguage);
   
   // 🏷️ Route classification
   const isAuthRoute = PUBLIC_AUTH_ROUTES.includes(pathname);
@@ -47,7 +44,6 @@ export function middleware(request) {
   const response = NextResponse.next();
   
   if (!currentLanguageCookie || currentLanguageCookie !== detectedLanguage) {
-    console.log("🍪 Setting language cookie:", detectedLanguage);
     response.cookies.set(LANGUAGE_COOKIE_NAME, detectedLanguage, {
       maxAge: 365 * 24 * 60 * 60, // 1 year
       path: "/",

@@ -18,12 +18,12 @@ export const client = async ({
   endpoint = "",
   method = METHODS.GET,
   params = {},
-  isServer = true,
   body = {},
   headers = {},
   ...rest
 }) => {
-  let url = baseUrl + DEFAULT_PREFIX + endpoint;
+
+  let url = BASE_URL + DEFAULT_PREFIX + endpoint;
 
   if (
     (method === METHODS.GET || method === METHODS.HEAD) &&
@@ -36,7 +36,7 @@ export const client = async ({
 
   if (Object.keys(params).length > 0) {
     const queryString = new URLSearchParams(params).toString();
-    url = `${baseUrl}${DEFAULT_PREFIX}${endpoint}?${queryString}`;
+    url = `${BASE_URL}${DEFAULT_PREFIX}${endpoint}?${queryString}`;
   }
 
   const fetchOptions = {

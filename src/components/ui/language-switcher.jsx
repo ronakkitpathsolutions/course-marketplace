@@ -39,9 +39,7 @@ const LanguageSwitcher = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
-  const handleLanguageChange = async (language) => {
-    console.log("Language switcher: changing to", language);
-    
+  const handleLanguageChange = async (language) => {    
     // Update local state immediately
     setCurrentLanguage(language);
     

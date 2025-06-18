@@ -12,7 +12,6 @@ export async function initI18nextServer(lang) {
     try {
       detectedLanguage = await getServerLanguage();
     } catch (error) {
-      console.warn("Error getting server language:", error);
       detectedLanguage = "en";
     }
   }

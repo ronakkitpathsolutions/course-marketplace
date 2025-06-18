@@ -46,10 +46,19 @@ export const api = {
       }),
     verifyToken: ({ data, ...configs }) =>
       client({
-          method: METHODS.POST,
-          data,
-          ...configs,
-          endpoint: "/token-verification"
+        method: METHODS.POST,
+        data,
+        ...configs,
+        endpoint: "/token-verification",
+      }),
+  },
+  landing: {
+    get: ({ data, ...configs }) =>
+      client({
+        method: METHODS.GET,
+        data,
+        ...configs,
+        endpoint: "/landingPageDetails",
       }),
   },
 };

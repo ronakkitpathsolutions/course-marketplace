@@ -1,3 +1,5 @@
+import { BASE_URL } from '@/constants';
+
 export {
   detectLanguageFromCookies,
   detectLanguageFromHeaders,
@@ -53,6 +55,26 @@ export const apiAsyncHandler = async (apiCall, handleError) => {
     }
     return null;
   }
+};
+
+export const getVideoType = (url = "") => {
+  if (!url) return "video/mp4";
+  return url.toLowerCase().endsWith(".m3u8")
+    ? "application/x-mpegURL"
+    : "video/mp4";
+};
+
+export const videoURL = (url = "") => {
+  if (!url) return "";
+  return url.startsWith("http://") || url.startsWith("https://")
+    ? url
+    : BASE_URL + url;
+};
+
+export const isHLS = (url) => {
+  if (!url) return false;
+  const hlsRegex = /\.(m3u8|m3u)/i;
+  return hlsRegex.test(url);
 };
 
 export const lineClamp = (lines) => ({

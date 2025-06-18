@@ -10,6 +10,7 @@
       "@store/*": ["./src/store/*"],
       "@validations/*": ["./src/validations/*"],
       "@api/*": ["./src/api/*"],
+      "@shared/*": ["./src/shared/*"],
     }
   }
 }

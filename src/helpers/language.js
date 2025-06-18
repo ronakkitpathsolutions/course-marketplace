@@ -98,7 +98,7 @@ export function getClientLanguage() {
       return browserLang;
     }
   } catch (error) {
-    console.warn('Error detecting client language:', error);
+    throw new Error(`Error getting client language: ${error.message}`);
   }
   
   return DEFAULT_LANGUAGE;
@@ -110,7 +110,6 @@ export function getClientLanguage() {
  */
 export function setLanguagePreference(language) {
   if (!LANGUAGES.includes(language)) {
-    console.warn(`Unsupported language: ${language}`);
     return;
   }
   
