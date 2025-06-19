@@ -4,6 +4,7 @@ import { useEffect, useMemo, useRef } from "react";
 import Hls from "hls.js";
 import "video.js/dist/video-js.css";
 import videojs from "video.js";
+import "./video.css"
 
 const VideoPlayer = ({ options, onReady, type = "application/x-mpegURL" }) => {
   const videoRef = useRef(null);

@@ -21,8 +21,6 @@ export default async function SlugPage({ params }) {
     domain: process.env.NEXT_PUBLIC_DOMAIN,
   });
 
-  console.log('data :>> ', response);
-
   return (
     <div>
       <h1>Course Detail Page</h1>

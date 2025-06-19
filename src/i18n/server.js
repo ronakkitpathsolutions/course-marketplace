@@ -3,9 +3,9 @@ import HttpBackend from "i18next-http-backend";
 import { BASE_URL, LANGUAGES } from "@/constants";
 import { getServerLanguage } from "@/helpers/server-language";
 
+let instance = i18next.createInstance();
+
 export async function initI18nextServer(lang) {
-  const instance = i18next.createInstance();
-  
   // If no language is provided, get it from server-side cookies
   let detectedLanguage = lang;
   if (!detectedLanguage) {
@@ -37,3 +37,5 @@ export async function initI18nextServer(lang) {
 
   return instance;
 }
+
+export const t = instance.t;

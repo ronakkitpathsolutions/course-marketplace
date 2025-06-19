@@ -4,7 +4,7 @@ import { getVideoType, isHLS, videoURL } from "@/helpers";
 const useLanding = ({ ...data }) => {
     
     const translation = data?.landing_page_translations?.[0];
-    
+
     const videoOptions = {
       options: {
         controls: true,
@@ -46,10 +46,7 @@ const useLanding = ({ ...data }) => {
       },
       type: getVideoType(translation?.intro),
     };
-
-    console.log("videoOptions :>> ", videoOptions);
-
-  return { videoOptions };
+  return { videoOptions, translation };
 }
 
 export default useLanding

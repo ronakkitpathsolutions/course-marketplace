@@ -57,6 +57,15 @@ export const apiAsyncHandler = async (apiCall, handleError) => {
   }
 };
 
+export const formatCurrency = (amount = 0, currencyCode = "USD") => {
+  return new Intl.NumberFormat("en-US", {
+    style: "currency",
+    currency: currencyCode,
+    minimumFractionDigits: 0,
+    maximumFractionDigits: 2,
+  }).format(amount);
+};
+
 export const getVideoType = (url = "") => {
   if (!url) return "video/mp4";
   return url.toLowerCase().endsWith(".m3u8")
