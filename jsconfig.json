@@ -12,6 +12,7 @@
       "@api/*": ["./src/api/*"],
       "@shared/*": ["./src/shared/*"],
       "@assets/*": ["./src/assets/*"],
+      "@images/*": ["./src/assets/images/*"],
     }
   }
 }

@@ -5,6 +5,9 @@ import CustomButton from "@/shared/buttons";
 import { Box, Container, Stack, styled, Typography } from "@mui/material";
 import Link from "next/link";
 import { Trans, useTranslation } from "react-i18next";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper/modules";
+import ReviewCard from "./review-card";
 
 const StyledLink = styled(Link)(() => ({
   color: "#782fef",
@@ -16,7 +19,7 @@ const StyledLink = styled(Link)(() => ({
   },
 }));
 
-const GetAccessWithReview = ({ ...data }) => {
+const GetAccessWithReview = ({ translation,...data }) => {
   const { t } = useTranslation();
   const course = data?.course || {};
 
@@ -143,6 +146,31 @@ const GetAccessWithReview = ({ ...data }) => {
         >
           {t("comments_about_course")}
         </Typography>
+        <Stack width="100%">
+          <Box sx={{ position: "relative" }}>
+            <Swiper
+              modules={[Navigation, Pagination]}
+              spaceBetween={50}
+              slidesPerView={1}
+              loop={true}
+              pagination={{
+                clickable: true,
+              }}
+              navigation={{
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev",
+              }}
+            >
+              {translation?.comments?.map((review, index) => (
+                <SwiperSlide key={index}>
+                  <ReviewCard review={review} />
+                </SwiperSlide>
+              ))}
+            </Swiper>
+            <Box position="absolute" className="swiper-button-prev swiper-button-bg-color-white" />
+            <Box position="absolute" className="swiper-button-next swiper-button-bg-color-white" />
+          </Box>
+        </Stack>
       </Container>
     </Box>
   );

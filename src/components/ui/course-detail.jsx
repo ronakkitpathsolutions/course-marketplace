@@ -73,7 +73,7 @@ const CourseDetail = ({ course, ...data }) => {
             {t("last_update")}:{" "}
             <span style={{ fontWeight: 500 }}>
               {data?.last_update
-                ? moment(data?.last_update).format("MMMM YYYY")
+                ? moment(new Date(data?.last_update)).format("MMMM YYYY")
                 : "-"}
             </span>
           </Typography>
